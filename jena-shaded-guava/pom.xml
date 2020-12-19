@@ -31,10 +31,10 @@
 
   <description>
     This module shades Google's Guava.
-    Direct use can lead to versioning problems 
+    Direct use can lead to versioning problems
     as some systems are dependent on specific
-    versions of guava. 
-    This module uses the Shade plugin to 
+    versions of guava.
+    This module uses the Shade plugin to
     re-package them under the package name
     org.apache.jena.ext.com.google....
   </description>
@@ -47,9 +47,9 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <!-- Version number specified explicitly and not in jena-project, 
+      <!-- Version number specified explicitly and not in jena-project,
            as it should only be used here, and further shadowing/bundle/NOTICE
-           consideration might be needed on upgrade. 
+           consideration might be needed on upgrade.
            The shading step takes only the com.google.commons/com.google.thirdparty
            This is important because Guava itself (at v24 at least) has tools dependencies
            with various licenses.
@@ -125,7 +125,7 @@
             </filter>
           </filters>
 
-          <!-- 
+          <!--
                Shade to a different package, so the JAR we produce will not be
                in conflict with any newer/older guava present in client code
                depending on Jena.
