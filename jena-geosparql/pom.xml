@@ -102,7 +102,7 @@
 
   <profiles>
     <!-- Tests: Java8 only
-         A change in the doubles is current resulting in 
+         A change in the doubles is current resulting in
          test failures on precision but the test is string based
          of WKT.
     -->
@@ -110,10 +110,10 @@
       <id>java-after-8</id>
       <activation>
         <jdk>[1.9,)</jdk>
-      </activation>      
+      </activation>
     </profile>
   </profiles>
-  
+
   <build>
 
     <plugins>
