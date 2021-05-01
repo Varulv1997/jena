@@ -51,7 +51,7 @@
   </scm>
 
    <properties>
-    <ver.junit>4.13.1</ver.junit>  
+    <ver.junit>4.13.1</ver.junit>
 
     <ver.slf4j>1.7.30</ver.slf4j>
     <ver.log4j2>2.14.0</ver.log4j2>
@@ -91,7 +91,7 @@
     -->
     <ver.httpcore-osgi>${ver.httpcore}</ver.httpcore-osgi>
     <ver.httpclient-osgi>${ver.httpclient}</ver.httpclient-osgi>
-    
+
     <ver.lucene>7.7.3</ver.lucene>
     <!-- Align to Lucene version -->
     <ver.elasticsearch>7.12.1</ver.elasticsearch>
@@ -157,7 +157,7 @@
   <profiles>
     <profile>
       <!--
-          This is the dev profile, typically used locally with 
+          This is the dev profile, typically used locally with
           "mvn clean install -Pdev".
           It builds the modules shipped in apache-jena binaries
           but does not build these binaries.
@@ -168,18 +168,18 @@
         <module>jena-shaded-guava</module>
         <module>jena-iri</module>
         <module>jena-base</module>
-        
+
         <module>jena-core</module>
         <module>jena-arq</module>
         <module>jena-shacl</module>
         <module>jena-rdfconnection</module>
         <module>jena-tdb</module>
-        <module>jena-db</module> 
+        <module>jena-db</module>
         <module>apache-jena-libs</module>
 
         <module>jena-text</module>
         <!-- <module>jena-text-es</module>        -->
-        
+
         <module>jena-cmds</module>
         <module>jena-fuseki2</module>
 
@@ -246,13 +246,13 @@
         <module>jena-fuseki2/jena-fuseki-geosparql</module>
 
         <!--
-            Tests of artifacts that require additional 
+            Tests of artifacts that require additional
             modules built later in the build process.
             For example, use Fuseki as a test server to
             test remote client APIs.
         -->
         <module>jena-integration-tests</module>
-        
+
         <!-- Binary distribution -->
         <module>apache-jena</module>
 
@@ -268,7 +268,7 @@
 
         <!-- Slow building modules -->
         <module>jena-jdbc</module>
-        <!--  Fails when building with Java9 JDK because it requires 
+        <!--  Fails when building with Java9 JDK because it requires
              system jar jdk.tools which is not available in Java9 onwards
         -->
         <module>jena-elephas</module>
@@ -325,13 +325,13 @@
         <artifactId>commons-codec</artifactId>
         <version>${ver.commons-codec}</version>
       </dependency>
-      
+
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${ver.commonsio}</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-compress</artifactId>
@@ -389,14 +389,14 @@
         <artifactId>commons-collections4</artifactId>
         <version>4.4</version>
       </dependency>
-      
+
       <!-- supports persistent data structures -->
       <dependency>
         <groupId>com.github.andrewoma.dexx</groupId>
         <artifactId>collection</artifactId>
         <version>${ver.dexxcollection}</version>
       </dependency>
-      
+
       <dependency>
         <groupId>com.github.jsonld-java</groupId>
         <artifactId>jsonld-java</artifactId>
@@ -439,20 +439,20 @@
           </exclusion>
         </exclusions>
       </dependency>
-      
+
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlet</artifactId>
         <version>${ver.jetty}</version>
       </dependency>
-      
+
       <!-- Jetty's useful servlets, inc compression -->
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
         <version>${ver.jetty}</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-webapp</artifactId>
@@ -538,8 +538,8 @@
         <type>pom</type>
       </dependency>
 
-      <!-- And intercept any uses of Jakarta Commons Logging 
-           e.g. Apache Common HTTP client. 
+      <!-- And intercept any uses of Jakarta Commons Logging
+           e.g. Apache Common HTTP client.
       -->
 
       <dependency>
@@ -584,7 +584,7 @@
           </exclusion>
         </exclusions>
       </dependency>
-      
+
       <dependency>
         <groupId>org.xenei</groupId>
         <artifactId>contract-test-maven-plugin</artifactId>
@@ -598,7 +598,7 @@
         <version>${ver.mockito}</version>
         <scope>test</scope>
       </dependency>
-      
+
       <dependency>
         <groupId>org.awaitility</groupId>
         <artifactId>awaitility</artifactId>
@@ -687,14 +687,14 @@
                 jena-core exclusions
             -->
             <exclude>**/src-examples/data/*</exclude>
-            
+
             <!--
                 jena-fuseki exclusions
             -->
             <exclude>**/dist/ABOUT</exclude>
             <exclude>**/SEE_FUSEKI2</exclude>
-            <!-- 
-                 Need to exclude JS and CSS since much of it comes from 
+            <!--
+                 Need to exclude JS and CSS since much of it comes from
                  other projects
             -->
             <exclude>**/src/main/webapp/css/*</exclude>
@@ -705,9 +705,9 @@
             <exclude>**/sparqler/data/empty.nt</exclude>
             <exclude>**/sparqler/pages/robots.txt</exclude>
             <exclude>**/sparqler/pages/crossdomain.xml</exclude>
-            
+
             <!-- General exclusions -->
-            <!-- 
+            <!--
                  Vocabularies are often just local copies of vocabularies
                  published by others
             -->
@@ -722,9 +722,9 @@
             -->
             <exclude>**/src/main/**/*.html</exclude>
             <exclude>**/src/**/package-info.java</exclude>
-            
+
             <exclude>**/DEPENDENCIES</exclude>
-            
+
             <!--
                 Text and Markdown files are typically used only for documentation purposes
                 and license declarations are usually spurious in these files since often they
@@ -735,17 +735,17 @@
             <!-- No comments in JSON -->
             <exclude>**/*.json</exclude>
             <exclude>**/*.srj</exclude>
-            
+
             <!--
                 META-INF services files can include comments but a license header would be
                 unecessarily clutter so we exclude these
             -->
             <exclude>**/META-INF/services/*</exclude>
-            
+
             <!--
                 Jena historically has large numbers of small test file
-                with no license headers.  Such small files are not required 
-                to have headers. 
+                with no license headers.  Such small files are not required
+                to have headers.
 
                 In addition, there are files with different Licenses
                 (e.g. W3C Software Licence, W3C Test Suite License) as
@@ -820,7 +820,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.2</version>
-          <!-- 
+          <!--
                Bug: SUREFIRE-1588 Fixed at 3.0.0
                https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=911925
           -->
@@ -844,7 +844,7 @@
                 <goal>jar-no-fork</goal>
               </goals>
             </execution>
-            <!-- Only needed in some jars <execution> <id>attach-sources-test</id> 
+            <!-- Only needed in some jars <execution> <id>attach-sources-test</id>
                  <goals> <goal>test-jar-no-fork</goal> </goals> </execution> -->
           </executions>
         </plugin>
@@ -976,7 +976,7 @@
 
         <!--
             Avoid the warnings and errors from m2e.
-            This plugin's configuration is used to store Eclipse m2e settings only. 
+            This plugin's configuration is used to store Eclipse m2e settings only.
             It has no influence on the Maven build itself.
         -->
         <plugin>
@@ -987,9 +987,9 @@
             <lifecycleMappingMetadata>
               <pluginExecutions>
                 <pluginExecution>
-                  <!-- 
+                  <!--
                        Warning:
-                       "maven-remote-resources-plugin (goal "process") is ignored by m2e." 
+                       "maven-remote-resources-plugin (goal "process") is ignored by m2e."
                   -->
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1004,9 +1004,9 @@
                   </action>
                 </pluginExecution>
                 <pluginExecution>
-                  <!-- 
+                  <!--
                        Warning:
-                       "maven-enforcer-plugin (goal "enforce") is ignored by m2e." 
+                       "maven-enforcer-plugin (goal "enforce") is ignored by m2e."
                   -->
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1020,7 +1020,7 @@
                     <ignore />
                   </action>
                 </pluginExecution>
-                
+
                 <pluginExecution>
                   <!--
                       Error:
@@ -1052,7 +1052,7 @@
                     <ignore />
                   </action>
                 </pluginExecution>
-                
+
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
